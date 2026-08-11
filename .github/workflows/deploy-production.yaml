@@ -22,13 +22,13 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore Labor.API/Labor.API.csproj
 
       - name: Build project
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build Labor.API/Labor.API.csproj --configuration Release --no-restore
 
       - name: Publish application
-        run: dotnet publish --configuration Release --output ./publish
+        run: dotnet publish Labor.API/Labor.API.csproj --configuration Release --output ./publish --no-build
 
       - name: Verify publish output
         run: dir publish
