@@ -1,0 +1,6167 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Labor.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Address": {
+      "get": {
+        "tags": [
+          "Address"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AddressIEnumerableApiResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Address"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/AddressDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Int32ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Address/{addressId}": {
+      "get": {
+        "tags": [
+          "Address"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "addressId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AddressApiResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Address"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "addressId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/AddressDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Address"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "addressId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Address/{addressId}/set-default": {
+      "put": {
+        "tags": [
+          "Address"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "addressId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Address/default": {
+      "get": {
+        "tags": [
+          "Address"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AddressApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/roles": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RoleResponseDtoListApiResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateRolesDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Int32ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/role/{RoleId}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RoleId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RoleResponseDto"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/roles/{roleId}": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "roleId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateRoleDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "roleId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/permissions": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateRolePermissionDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Int32ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/role-permissions/{roleId}": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "roleId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateUpdateRolePermissionsDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Int32ApiResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "roleId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RolePermissionResponseDtoListApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/permissions/{permissionId}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "permissionId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PermissionResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/role-permissions/{permissionId}": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "permissionId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateRolePermissionDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "permissionId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/users": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "role",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "inactiveUsers",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "in": "query",
+            "name": "pageNumber",
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "type": "integer",
+            "format": "int32",
+            "default": 50
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AdminUserListItemDtoIReadOnlyListApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/onboard-labor": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/OnboardLaborRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/OnboardLaborResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/upload-labor-photo": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "file",
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UploadLaborPhotoResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/user/{userId}/activate": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/user/{userId}/deactivate": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/labor/{laborId}/verify": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/labor/{laborId}/activate": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/labor/{laborId}/deactivate": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/orders": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "orderStatus",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "pageNumber",
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "type": "integer",
+            "format": "int32",
+            "default": 50
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AdminOrderListItemDtoIReadOnlyListApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/labors": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "verifiedOnly",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "pageNumber",
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "type": "integer",
+            "format": "int32",
+            "default": 50
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AdminLaborListItemDtoIReadOnlyListApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/labor/{laborId}/details": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AdminLaborDetailDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/labor/{laborId}": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/AdminUpdateLaborRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/RegisterRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AuthResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/LoginRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AuthResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/complete-profile": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CompleteProfileDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Auth/change-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ChangePasswordDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Cart": {
+      "get": {
+        "tags": [
+          "Cart"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sessionId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CartSummaryDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Cart/add": {
+      "post": {
+        "tags": [
+          "Cart"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/AddToCartDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AddToCartResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Cart/{cartId}": {
+      "put": {
+        "tags": [
+          "Cart"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cartId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateCartItemDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cart"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cartId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Cart/clear": {
+      "delete": {
+        "tags": [
+          "Cart"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Cart/count": {
+      "get": {
+        "tags": [
+          "Cart"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sessionId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Int32ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Cart/checkout": {
+      "post": {
+        "tags": [
+          "Cart"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CheckoutRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CheckoutResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Ivr/exotel/digit": {
+      "post": {
+        "tags": [
+          "Ivr"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "Digits",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "CustomField",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "CallSid",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ivr/mock-response": {
+      "post": {
+        "tags": [
+          "Ivr"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MockIvrRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Labor/search": {
+      "get": {
+        "tags": [
+          "Labor"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "availabilityDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "LaborTypeId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "SearchText",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Latitude",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "Longitude",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "RadiusKm",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "MinRating",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "MaxDailyRate",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "AvailabilityStatus",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "PageNumber",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "PageSize",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LaborResponseDtoIEnumerableApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Labor/nearby": {
+      "get": {
+        "tags": [
+          "Labor"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "latitude",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "longitude",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "radiusKm",
+            "type": "integer",
+            "format": "int32",
+            "default": 10
+          },
+          {
+            "in": "query",
+            "name": "laborTypeId",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LaborResponseDtoIEnumerableApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Labor/nearby-tomorrow": {
+      "get": {
+        "tags": [
+          "Labor"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "latitude",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "longitude",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "radiusKm",
+            "type": "integer",
+            "format": "int32",
+            "default": 10
+          },
+          {
+            "in": "query",
+            "name": "availabilityStatus",
+            "type": "string",
+            "default": "Available"
+          },
+          {
+            "in": "query",
+            "name": "pageNumber",
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "type": "integer",
+            "format": "int32",
+            "default": 50
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LaborResponseDtoIEnumerableApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Labor/{laborId}": {
+      "get": {
+        "tags": [
+          "Labor"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LaborResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Labor/types": {
+      "get": {
+        "tags": [
+          "Labor"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LaborTypeIEnumerableApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Labor/{laborId}/availability-status": {
+      "put": {
+        "tags": [
+          "Labor"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateAvailabilityDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Labor/{laborId}/skills": {
+      "post": {
+        "tags": [
+          "Labor"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/LaborSkillDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Labor/skills/{skillId}": {
+      "delete": {
+        "tags": [
+          "Labor"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "skillId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Labor/{laborId}/availabilities": {
+      "put": {
+        "tags": [
+          "Labor"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpsertLaborAvailabilityRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Labor"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "year",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "month",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LaborAvailabilityItemDtoIEnumerableApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Order": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateOrderDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/OrderCreationResponseDtoApiResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "orderStatus",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "pageNumber",
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "type": "integer",
+            "format": "int32",
+            "default": 20
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ObjectIEnumerableApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Order/{orderId}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/OrderResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Order/{orderId}/labor-summary": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/OrderLaborSummaryDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Order/{orderId}/status": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateOrderStatusDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Order/items/{orderItemId}/status": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderItemId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateOrderItemStatusDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Order/items/{orderItemId}/confirm": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderItemId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/LaborConfirmAvailabilityDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Order/{orderId}/tracking": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/AddOrderTrackingDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Payment/orders/{orderId}/summary": {
+      "get": {
+        "tags": [
+          "Payment"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PaymentSummaryDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Payment/orders/{orderId}/create": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreatePaymentRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CreatePaymentResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Payment/verify": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/VerifyPaymentRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PaymentCompleteResultDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Review": {
+      "post": {
+        "tags": [
+          "Review"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/AddLaborReviewRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AddLaborReviewResponseDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Review/labor/{laborId}": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "pageNumber",
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "type": "integer",
+            "format": "int32",
+            "default": 10
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LaborReviewDtoIEnumerableApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Review/labor/{laborId}/average-rating": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "laborId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DecimalApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Review/{reviewId}": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LaborReviewDtoApiResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Review"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateLaborReviewRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Review"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "reviewId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/User/User/{userId}/profile": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UserProfileDetailDtoApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/User/user/{userId}/profile": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserProfileDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AddLaborReviewRequestDto": {
+      "required": [
+        "laborId",
+        "orderItemId",
+        "rating"
+      ],
+      "type": "object",
+      "properties": {
+        "orderItemId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "rating": {
+          "format": "int32",
+          "maximum": 5,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "comment": {
+          "maxLength": 1000,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AddLaborReviewResponseDto": {
+      "type": "object",
+      "properties": {
+        "reviewId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AddLaborReviewResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/AddLaborReviewResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "AddOrderTrackingDto": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AddToCartDto": {
+      "required": [
+        "laborId",
+        "requiredHours"
+      ],
+      "type": "object",
+      "properties": {
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "requiredHours": {
+          "format": "int32",
+          "maximum": 24,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "workDescription": {
+          "maxLength": 1000,
+          "minLength": 0,
+          "type": "string"
+        },
+        "preferredDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "sessionId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AddToCartResponseDto": {
+      "type": "object",
+      "properties": {
+        "cartId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sessionId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AddToCartResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/AddToCartResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Address": {
+      "required": [
+        "addressType",
+        "city",
+        "country",
+        "state",
+        "street",
+        "zipCode"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "addressType": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "street": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "city": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "state": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "country": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "zipCode": {
+          "maxLength": 20,
+          "minLength": 0,
+          "type": "string"
+        },
+        "latitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "longitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Order"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "AddressApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/Address"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "AddressDto": {
+      "required": [
+        "city",
+        "country",
+        "state",
+        "street",
+        "zipCode"
+      ],
+      "type": "object",
+      "properties": {
+        "addressId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "addressType": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "street": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "city": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "state": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "country": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "zipCode": {
+          "maxLength": 20,
+          "minLength": 0,
+          "type": "string"
+        },
+        "latitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "longitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "isDefault": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AddressIEnumerableApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdminLaborDetailDto": {
+      "type": "object",
+      "properties": {
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "mobileNumber": {
+          "type": "string"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "string"
+        },
+        "laborTypeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborTypeName": {
+          "type": "string"
+        },
+        "specialization": {
+          "type": "string"
+        },
+        "experienceYears": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "minimumHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "maximumHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "availabilityStatus": {
+          "type": "string"
+        },
+        "isVerified": {
+          "type": "boolean"
+        },
+        "laborListingActive": {
+          "type": "boolean"
+        },
+        "addressId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "street": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "zipCode": {
+          "type": "string"
+        },
+        "latitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "longitude": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdminLaborDetailDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/AdminLaborDetailDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdminLaborListItemDto": {
+      "type": "object",
+      "properties": {
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "mobileNumber": {
+          "type": "string"
+        },
+        "laborName": {
+          "type": "string"
+        },
+        "laborType": {
+          "type": "string"
+        },
+        "specialization": {
+          "type": "string"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "rating": {
+          "format": "double",
+          "type": "number"
+        },
+        "isVerified": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "availabilityStatus": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdminLaborListItemDtoIReadOnlyListApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AdminLaborListItemDto"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdminOrderListItemDto": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderNumber": {
+          "type": "string"
+        },
+        "employerId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "employerName": {
+          "type": "string"
+        },
+        "employerMobile": {
+          "type": "string"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "orderStatus": {
+          "type": "string"
+        },
+        "paymentStatus": {
+          "type": "string"
+        },
+        "scheduledDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdminOrderListItemDtoIReadOnlyListApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AdminOrderListItemDto"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdminUpdateLaborRequestDto": {
+      "required": [
+        "city",
+        "country",
+        "firstName",
+        "laborTypeId",
+        "lastName",
+        "mobileNumber",
+        "state",
+        "street",
+        "zipCode"
+      ],
+      "type": "object",
+      "properties": {
+        "mobileNumber": {
+          "maxLength": 15,
+          "minLength": 0,
+          "type": "string"
+        },
+        "userName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "firstName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "lastName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "email": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "profilePicture": {
+          "maxLength": 500,
+          "minLength": 0,
+          "type": "string"
+        },
+        "newPassword": {
+          "minLength": 6,
+          "type": "string"
+        },
+        "laborTypeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "specialization": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "experienceYears": {
+          "format": "int32",
+          "maximum": 80,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "maximum": 79228162514264337593543950335,
+          "minimum": 0,
+          "type": "number"
+        },
+        "minimumHours": {
+          "format": "int32",
+          "maximum": 168,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "maximumHours": {
+          "format": "int32",
+          "maximum": 168,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "availabilityStatus": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "street": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "city": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "state": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "country": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "zipCode": {
+          "maxLength": 20,
+          "minLength": 0,
+          "type": "string"
+        },
+        "latitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "longitude": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdminUserListItemDto": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "mobileNumber": {
+          "type": "string"
+        },
+        "roleName": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "isProfileComplete": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AdminUserListItemDtoIReadOnlyListApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AdminUserListItemDto"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": { },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "AuthResponseDto": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "tokenExpiry": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "isTemporaryPassword": {
+          "type": "boolean"
+        },
+        "requirePasswordChange": {
+          "type": "boolean"
+        },
+        "isProfileComplete": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AuthResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/AuthResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Cart": {
+      "required": [
+        "dailyRate",
+        "requiredHours",
+        "totalAmount"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "employerId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "requiredHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "workDescription": {
+          "maxLength": 1000,
+          "minLength": 0,
+          "type": "string"
+        },
+        "preferredDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "is_deleted": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "employer": {
+          "$ref": "#/definitions/User"
+        },
+        "labor": {
+          "$ref": "#/definitions/Laborer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CartItemDto": {
+      "type": "object",
+      "properties": {
+        "cartId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "requiredHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "workDescription": {
+          "type": "string"
+        },
+        "preferredDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "laborName": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "string"
+        },
+        "laborType": {
+          "type": "string"
+        },
+        "specialization": {
+          "type": "string"
+        },
+        "rating": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalReviews": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "isExpired": {
+          "type": "boolean"
+        },
+        "isUnavailableNow": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CartSummaryDto": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartItemDto"
+          }
+        },
+        "totalItems": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CartSummaryDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/CartSummaryDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ChangePasswordDto": {
+      "required": [
+        "confirmPassword",
+        "currentPassword",
+        "newPassword"
+      ],
+      "type": "object",
+      "properties": {
+        "currentPassword": {
+          "maxLength": 100,
+          "minLength": 6,
+          "type": "string"
+        },
+        "newPassword": {
+          "maxLength": 100,
+          "minLength": 6,
+          "type": "string"
+        },
+        "confirmPassword": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CheckoutRequestDto": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string"
+        },
+        "addressId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CheckoutResponseDto": {
+      "type": "object",
+      "properties": {
+        "cartSummary": {
+          "$ref": "#/definitions/CartSummaryDto"
+        },
+        "message": {
+          "type": "string"
+        },
+        "requireAddress": {
+          "type": "boolean"
+        },
+        "requirePayment": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CheckoutResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/CheckoutResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CompleteProfileDto": {
+      "required": [
+        "city",
+        "country",
+        "firstName",
+        "lastName",
+        "state",
+        "street",
+        "zipCode"
+      ],
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "maxLength": 100,
+          "minLength": 2,
+          "type": "string"
+        },
+        "lastName": {
+          "maxLength": 100,
+          "minLength": 2,
+          "type": "string"
+        },
+        "email": {
+          "format": "email",
+          "type": "string"
+        },
+        "street": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "city": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "state": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "country": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "zipCode": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "latitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "longitude": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateOrderDto": {
+      "required": [
+        "workAddressId"
+      ],
+      "type": "object",
+      "properties": {
+        "workAddressId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "scheduledDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "specialInstructions": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreatePaymentRequestDto": {
+      "type": "object",
+      "properties": {
+        "couponCode": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreatePaymentResponseDto": {
+      "type": "object",
+      "properties": {
+        "paymentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "gatewayOrderId": {
+          "type": "string"
+        },
+        "razorpayKeyId": {
+          "type": "string"
+        },
+        "amountPaise": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "laborAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "platformFee": {
+          "format": "double",
+          "type": "number"
+        },
+        "discountAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "employerName": {
+          "type": "string"
+        },
+        "employerEmail": {
+          "type": "string"
+        },
+        "employerContact": {
+          "type": "string"
+        },
+        "isMock": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreatePaymentResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/CreatePaymentResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateRolePermissionDto": {
+      "required": [
+        "featureName",
+        "roleId"
+      ],
+      "type": "object",
+      "properties": {
+        "roleId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "featureName": {
+          "maxLength": 250,
+          "minLength": 0,
+          "type": "string"
+        },
+        "canView": {
+          "type": "boolean"
+        },
+        "canEdit": {
+          "type": "boolean"
+        },
+        "canCreate": {
+          "type": "boolean"
+        },
+        "canDelete": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "createdBy": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateRolesDto": {
+      "required": [
+        "roleName"
+      ],
+      "type": "object",
+      "properties": {
+        "roleName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 250,
+          "minLength": 0,
+          "type": "string"
+        },
+        "createdBy": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateUpdateRolePermissionsDto": {
+      "required": [
+        "featureName"
+      ],
+      "type": "object",
+      "properties": {
+        "featureName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "canView": {
+          "type": "boolean"
+        },
+        "canCreate": {
+          "type": "boolean"
+        },
+        "canEdit": {
+          "type": "boolean"
+        },
+        "canDelete": {
+          "type": "boolean"
+        },
+        "createdBy": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DecimalApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "format": "double",
+          "type": "number"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Int32ApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborAvailabilityItemDto": {
+      "type": "object",
+      "properties": {
+        "availableDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "startTime": {
+          "format": "date-span",
+          "type": "string"
+        },
+        "endTime": {
+          "format": "date-span",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborAvailabilityItemDtoIEnumerableApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborAvailabilityItemDto"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborConfirmAvailabilityDto": {
+      "type": "object",
+      "properties": {
+        "accepted": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborResponseDto": {
+      "type": "object",
+      "properties": {
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "string"
+        },
+        "laborTypeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborType": {
+          "type": "string"
+        },
+        "specialization": {
+          "type": "string"
+        },
+        "experienceYears": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "rating": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalReviews": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "minimumHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "maximumHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "availabilityStatus": {
+          "type": "string"
+        },
+        "isVerified": {
+          "type": "boolean"
+        },
+        "distanceKm": {
+          "format": "double",
+          "type": "number"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "availableDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string"
+        },
+        "endTime": {
+          "type": "string"
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborSkillDto"
+          }
+        },
+        "recentReviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborReviewDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/LaborResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborResponseDtoIEnumerableApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborResponseDto"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborReview": {
+      "required": [
+        "rating"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderItemId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "employerId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "rating": {
+          "format": "int32",
+          "maximum": 5,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "comment": {
+          "maxLength": 1000,
+          "minLength": 0,
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "orderItem": {
+          "$ref": "#/definitions/OrderItem"
+        },
+        "employer": {
+          "$ref": "#/definitions/User"
+        },
+        "labor": {
+          "$ref": "#/definitions/Laborer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborReviewDto": {
+      "required": [
+        "rating"
+      ],
+      "type": "object",
+      "properties": {
+        "reviewId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderItemId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "rating": {
+          "format": "int32",
+          "maximum": 5,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "comment": {
+          "maxLength": 1000,
+          "minLength": 0,
+          "type": "string"
+        },
+        "employerName": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborReviewDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/LaborReviewDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborReviewDtoIEnumerableApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborReviewDto"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborSkill": {
+      "required": [
+        "proficiencyLevel",
+        "skillName"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "skillName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "proficiencyLevel": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "labor": {
+          "$ref": "#/definitions/Laborer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborSkillDto": {
+      "required": [
+        "proficiencyLevel",
+        "skillName"
+      ],
+      "type": "object",
+      "properties": {
+        "skillId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "skillName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "proficiencyLevel": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborType": {
+      "required": [
+        "typeName"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "typeName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "labors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Laborer"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LaborTypeIEnumerableApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborType"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Laborer": {
+      "required": [
+        "dailyRate"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborTypeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "specialization": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "experienceYears": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "rating": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalReviews": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "minimumHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "maximumHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "availabilityStatus": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "isVerified": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "is_deleted": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        },
+        "laborType": {
+          "$ref": "#/definitions/LaborType"
+        },
+        "laborSkills": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborSkill"
+          }
+        },
+        "carts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Cart"
+          }
+        },
+        "orderItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderItem"
+          }
+        },
+        "laborReviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborReview"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LoginRequestDto": {
+      "required": [
+        "mobileNumber",
+        "password"
+      ],
+      "type": "object",
+      "properties": {
+        "mobileNumber": {
+          "maxLength": 15,
+          "minLength": 10,
+          "type": "string"
+        },
+        "password": {
+          "maxLength": 100,
+          "minLength": 6,
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MockIvrRequestDto": {
+      "type": "object",
+      "properties": {
+        "laborConfirmationId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "digit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ObjectIEnumerableApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": { }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OnboardLaborRequestDto": {
+      "required": [
+        "firstName",
+        "laborTypeId",
+        "lastName",
+        "mobileNumber",
+        "password"
+      ],
+      "type": "object",
+      "properties": {
+        "mobileNumber": {
+          "maxLength": 15,
+          "minLength": 0,
+          "type": "string"
+        },
+        "userName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "firstName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "lastName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "email": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "password": {
+          "minLength": 6,
+          "type": "string"
+        },
+        "laborTypeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "minimum": 0,
+          "type": "number"
+        },
+        "specialization": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "experienceYears": {
+          "format": "int32",
+          "maximum": 80,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "maximumHourAvilablePerDay": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "street": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "city": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "state": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "country": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "zipCode": {
+          "maxLength": 20,
+          "minLength": 0,
+          "type": "string"
+        },
+        "latitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "longitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "profilePicture": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "OnboardLaborResponseDto": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "OnboardLaborResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/OnboardLaborResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Order": {
+      "required": [
+        "orderNumber",
+        "totalAmount"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderNumber": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "employerId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "orderStatus": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "paymentStatus": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "workAddressId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "scheduledDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "completedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "cancelledDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "is_deleted": {
+          "type": "boolean"
+        },
+        "cancelReason": {
+          "maxLength": 500,
+          "minLength": 0,
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "employer": {
+          "$ref": "#/definitions/User"
+        },
+        "workAddress": {
+          "$ref": "#/definitions/Address"
+        },
+        "orderItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderItem"
+          }
+        },
+        "orderTrackings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderTracking"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderCreationResponseDto": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderNumber": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderCreationResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/OrderCreationResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderItem": {
+      "required": [
+        "dailyRate",
+        "requiredHours",
+        "totalAmount"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "requiredHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "workDescription": {
+          "maxLength": 1000,
+          "minLength": 0,
+          "type": "string"
+        },
+        "itemStatus": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "actualHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "startTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "order": {
+          "$ref": "#/definitions/Order"
+        },
+        "labor": {
+          "$ref": "#/definitions/Laborer"
+        },
+        "laborReviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborReview"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderItemDto": {
+      "type": "object",
+      "properties": {
+        "orderItemId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "requiredHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "workDescription": {
+          "type": "string"
+        },
+        "itemStatus": {
+          "type": "string"
+        },
+        "actualHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "startTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "laborName": {
+          "type": "string"
+        },
+        "laborMobile": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "string"
+        },
+        "laborType": {
+          "type": "string"
+        },
+        "specialization": {
+          "type": "string"
+        },
+        "rating": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderLaborItemDto": {
+      "type": "object",
+      "properties": {
+        "orderItemId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborName": {
+          "type": "string"
+        },
+        "laborMobile": {
+          "type": "string"
+        },
+        "laborType": {
+          "type": "string"
+        },
+        "requiredHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "workDescription": {
+          "type": "string"
+        },
+        "itemStatus": {
+          "type": "string"
+        },
+        "preferredWorkDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "confirmationStatus": {
+          "type": "string"
+        },
+        "attemptCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "respondedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "hasReview": {
+          "type": "boolean"
+        },
+        "reviewId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "reviewRating": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "reviewComment": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderLaborSummaryDto": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/OrderSummaryHeaderDto"
+        },
+        "laborItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderLaborItemDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderLaborSummaryDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/OrderLaborSummaryDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderResponseDto": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderNumber": {
+          "type": "string"
+        },
+        "employerId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "orderStatus": {
+          "type": "string"
+        },
+        "paymentStatus": {
+          "type": "string"
+        },
+        "scheduledDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "completedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "cancelledDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "cancelReason": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "employerName": {
+          "type": "string"
+        },
+        "employerMobile": {
+          "type": "string"
+        },
+        "workAddress": {
+          "$ref": "#/definitions/AddressDto"
+        },
+        "orderItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderItemDto"
+          }
+        },
+        "orderTrackings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderTrackingDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/OrderResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderSummaryHeaderDto": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderNumber": {
+          "type": "string"
+        },
+        "orderStatus": {
+          "type": "string"
+        },
+        "paymentStatus": {
+          "type": "string"
+        },
+        "scheduledDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zipCode": {
+          "type": "string"
+        },
+        "totalLabor": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "confirmedLabor": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pendingLabor": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "declinedLabor": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderTracking": {
+      "required": [
+        "status"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "status": {
+          "maxLength": 50,
+          "minLength": 0,
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 500,
+          "minLength": 0,
+          "type": "string"
+        },
+        "location": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "order": {
+          "$ref": "#/definitions/Order"
+        }
+      },
+      "additionalProperties": false
+    },
+    "OrderTrackingDto": {
+      "type": "object",
+      "properties": {
+        "trackingId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PaymentCompleteResultDto": {
+      "type": "object",
+      "properties": {
+        "paymentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderNumber": {
+          "type": "string"
+        },
+        "amountPaid": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PaymentCompleteResultDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/PaymentCompleteResultDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "PaymentSummaryDto": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "orderNumber": {
+          "type": "string"
+        },
+        "paymentStatus": {
+          "type": "string"
+        },
+        "canPay": {
+          "type": "boolean"
+        },
+        "payableItemCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "completedItemCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "platformFee": {
+          "format": "double",
+          "type": "number"
+        },
+        "discountAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "couponCode": {
+          "type": "string"
+        },
+        "totalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "lastPaymentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "lastPaymentStatus": {
+          "type": "string"
+        },
+        "lastProviderOrderId": {
+          "type": "string"
+        },
+        "lastPaidAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PaymentSummaryDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/PaymentSummaryDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "PermissionResponseDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "roleId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "featureName": {
+          "type": "string"
+        },
+        "canView": {
+          "type": "boolean"
+        },
+        "canCreate": {
+          "type": "boolean"
+        },
+        "canEdit": {
+          "type": "boolean"
+        },
+        "canDelete": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdBy": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "updatedBy": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PermissionResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/PermissionResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Person": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdBy": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RegisterRequestDto": {
+      "required": [
+        "mobileNumber",
+        "password"
+      ],
+      "type": "object",
+      "properties": {
+        "mobileNumber": {
+          "maxLength": 15,
+          "minLength": 10,
+          "type": "string"
+        },
+        "password": {
+          "maxLength": 100,
+          "minLength": 6,
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Role": {
+      "required": [
+        "roleName"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "roleName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
+        },
+        "rolePermissions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RolePermission"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "RolePermission": {
+      "required": [
+        "featureName"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "roleId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "featureName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "canView": {
+          "type": "boolean"
+        },
+        "canCreate": {
+          "type": "boolean"
+        },
+        "canEdit": {
+          "type": "boolean"
+        },
+        "canDelete": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/definitions/Role"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RolePermissionResponseDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "roleId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "roleName": {
+          "type": "string"
+        },
+        "featureName": {
+          "type": "string"
+        },
+        "canView": {
+          "type": "boolean"
+        },
+        "canCreate": {
+          "type": "boolean"
+        },
+        "canEdit": {
+          "type": "boolean"
+        },
+        "canDelete": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RolePermissionResponseDtoListApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RolePermissionResponseDto"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "RoleResponseDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "roleName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RoleResponseDtoListApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RoleResponseDto"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAvailabilityDto": {
+      "type": "object",
+      "properties": {
+        "availabilityStatus": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateCartItemDto": {
+      "type": "object",
+      "properties": {
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "requiredHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "workDescription": {
+          "type": "string"
+        },
+        "preferredDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateLaborReviewRequestDto": {
+      "required": [
+        "rating"
+      ],
+      "type": "object",
+      "properties": {
+        "rating": {
+          "format": "int32",
+          "maximum": 5,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "comment": {
+          "maxLength": 1000,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateOrderItemStatusDto": {
+      "type": "object",
+      "properties": {
+        "itemStatus": {
+          "type": "string"
+        },
+        "actualHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "startTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endTime": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateOrderStatusDto": {
+      "type": "object",
+      "properties": {
+        "newStatus": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateRoleDto": {
+      "required": [
+        "roleName"
+      ],
+      "type": "object",
+      "properties": {
+        "roleName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 250,
+          "minLength": 0,
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "updatedBy": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateRolePermissionDto": {
+      "required": [
+        "featureName"
+      ],
+      "type": "object",
+      "properties": {
+        "featureName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "canView": {
+          "type": "boolean"
+        },
+        "canCreate": {
+          "type": "boolean"
+        },
+        "canEdit": {
+          "type": "boolean"
+        },
+        "canDelete": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "updatedBy": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateUserProfileDto": {
+      "type": "object",
+      "properties": {
+        "userName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "mobileNumber": {
+          "maxLength": 15,
+          "minLength": 0,
+          "type": "string"
+        },
+        "firstName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "lastName": {
+          "maxLength": 100,
+          "minLength": 0,
+          "type": "string"
+        },
+        "email": {
+          "format": "email",
+          "type": "string"
+        },
+        "password": {
+          "maxLength": 100,
+          "minLength": 6,
+          "type": "string"
+        },
+        "newPassword": {
+          "maxLength": 100,
+          "minLength": 6,
+          "type": "string"
+        },
+        "confirmPassword": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "maxLength": 500,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UploadLaborPhotoResponseDto": {
+      "type": "object",
+      "properties": {
+        "relativeUrl": {
+          "type": "string"
+        },
+        "absoluteUrl": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UploadLaborPhotoResponseDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/UploadLaborPhotoResponseDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpsertLaborAvailabilityRequestDto": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborAvailabilityItemDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "User": {
+      "required": [
+        "mobileNumber"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "mobileNumber": {
+          "maxLength": 15,
+          "minLength": 0,
+          "type": "string"
+        },
+        "passwordHash": {
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
+        },
+        "personId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "roleId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "isTemporaryPassword": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "isMobileVerified": {
+          "type": "boolean"
+        },
+        "isEmailVerified": {
+          "type": "boolean"
+        },
+        "isProfileComplete": {
+          "type": "boolean"
+        },
+        "is_deleted": {
+          "type": "boolean"
+        },
+        "lastLoginAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "person": {
+          "$ref": "#/definitions/Person"
+        },
+        "role": {
+          "$ref": "#/definitions/Role"
+        },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "laborProfile": {
+          "$ref": "#/definitions/Laborer"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Order"
+          }
+        },
+        "carts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Cart"
+          }
+        },
+        "laborReviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LaborReview"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserProfileDetailDto": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "mobileNumber": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "isProfileComplete": {
+          "type": "boolean"
+        },
+        "isMobileVerified": {
+          "type": "boolean"
+        },
+        "isEmailVerified": {
+          "type": "boolean"
+        },
+        "lastLoginAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "roleName": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "string"
+        },
+        "addressId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "street": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "zipCode": {
+          "type": "string"
+        },
+        "addressLatitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "addressLongitude": {
+          "format": "double",
+          "type": "number"
+        },
+        "laborId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laborTypeName": {
+          "type": "string"
+        },
+        "specialization": {
+          "type": "string"
+        },
+        "experienceYears": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dailyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "minimumHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "maximumHours": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "availabilityStatus": {
+          "type": "string"
+        },
+        "laborIsVerified": {
+          "type": "boolean"
+        },
+        "laborIsActive": {
+          "type": "boolean"
+        },
+        "canEditUsers": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserProfileDetailDtoApiResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/UserProfileDetailDto"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "VerifyPaymentRequestDto": {
+      "required": [
+        "paymentId",
+        "razorpayOrderId",
+        "razorpayPaymentId"
+      ],
+      "type": "object",
+      "properties": {
+        "paymentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "razorpayOrderId": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "razorpayPaymentId": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "razorpaySignature": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": { }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

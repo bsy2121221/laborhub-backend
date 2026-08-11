@@ -1,0 +1,6 @@
+@Labor.API_HostAddress = http://localhost:5172
+
+GET {{Labor.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
