@@ -3486,3 +3486,34 @@ BEGIN
     SELECT @@ROWCOUNT AS RowsAffected;
 END
 GO
+--create or update labor types
+CREATE OR ALTER PROCEDURE [dbo].[sp_CreateorupdateLaborTypes]
+  @TypeName varchar(100),
+  @Description varchar(255)=null,
+  @DailyRate decimal(10,2)=null,
+  @isActive bit =0,
+  @CreatedBy int =null,
+  @updatedBy int =null
+As
+ begin
+  set nocount on;
+
+   if exists(select top 1 1 from LaborTypes where TypeName=@TypeName)
+   begin
+     update LaborTypes set 
+	 Description =@Description,
+	 DailyRate=@DailyRate,
+	 IsActive=@isActive,
+	 UpdatedAt=GETDATE(),
+	 UpdatedBy=@updatedBy
+	 where TypeName=@TypeName
+   select 1 as NewTypeId
+   end
+   else
+   begin 
+     insert into LaborTypes(TypeName,Description,DailyRate,IsActive,CreatedAt,CreatedBy)
+	 values(@TypeName,@Description,@DailyRate,1,GETDATE(),@CreatedBy)
+	 select cast(SCOPE_IDENTITY() as int) as NewTypeId
+   end
+  end
+

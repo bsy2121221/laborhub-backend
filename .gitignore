@@ -1,0 +1,26 @@
+# Build output
+**/bin/
+**/obj/
+
+# Publish / local deploy
+publish/
+ftp-app-offline/
+
+# User-specific IDE files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Secrets (never commit)
+*.env
+.env.*

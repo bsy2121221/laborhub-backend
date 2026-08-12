@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -187,6 +188,26 @@ namespace Labor.DataAccess.Repositories
                 parameters,
                 commandType: CommandType.StoredProcedure);
             return true;
+        }
+
+        public async Task<bool?> AdminCreateUpdateLaborTypesAsync(int? createdBy, int? updatedBy, AdminCreateUpdateLaborTypes request)
+        {
+            using var connection =_dbContext.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@TypeName", request.TypeName);
+            parameters.Add("@Description", request.Description);
+            parameters.Add("@DailyRate", request.DailyRate);
+            parameters.Add("@isActive", request.isActive);
+            parameters.Add("@CreatedBy", createdBy);
+            parameters.Add("@updatedBy", updatedBy);
+
+            var result= await connection.QuerySingleAsync<dynamic>(
+                "sp_CreateOrUpdateLaborTypes",
+                parameters,
+                commandType: CommandType.StoredProcedure
+                );
+            return result.NewTypeId > 0;
+
         }
     }
 }

@@ -535,6 +535,33 @@ namespace Labor.API.Controllers
                 return StatusCode(500, ApiResponse.ErrorResponse("Internal server error"));
             }
         }
+        [HttpPost("createOrUpdate-laborTypes")]
+        public async Task<ActionResult<ApiResponse>> CreateOrUpdateLaborTypes([FromBody] AdminCreateUpdateLaborTypes adminCreateUpdateLaborTypes)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+                    return BadRequest(ApiResponse.ErrorResponse("Validation failed", errors));
+                }
+                var createdBy = User.GetCurrentUserId();
+                await _adminManagementService.AdminCreateUpdateLaborTypesAsync(createdBy, createdBy, adminCreateUpdateLaborTypes);
+                return Ok(ApiResponse.SuccessResponse("Labor Types created successfully"));
+
+            }
+            catch (Microsoft.Data.SqlClient.SqlException ex)
+            {
+                _logger.LogWarning(ex, "UpdateLaborFull failed");
+                return Conflict(ApiResponse.ErrorResponse(ex.Message));
+            }
+            catch (Exception ex)
+            {
+
+                _logger.LogWarning(ex, "Create update of labor Types failed");
+                return StatusCode(500,ApiResponse.ErrorResponse("Internal server error"));
+            }
+        }
 
     }
 }

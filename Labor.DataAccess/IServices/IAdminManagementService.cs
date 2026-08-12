@@ -19,5 +19,6 @@ namespace Labor.DataAccess.IServices
 
         Task<AdminLaborDetailDto?> GetLaborForEditAsync(int laborId);
         Task<bool> AdminUpdateLaborFullAsync(int laborId, AdminUpdateLaborRequestDto request, string? passwordHash, int? updatedBy);
+        Task<bool?> AdminCreateUpdateLaborTypesAsync(int? createdBy, int? updatedBy, AdminCreateUpdateLaborTypes request);
     }
 }

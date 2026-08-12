@@ -63,9 +63,14 @@ namespace Labor.DataAccess.Services
         {
             return await _adminManagementRepository.VerifyLabourAsync(laborId);
         }
+        public async Task<bool?> AdminCreateUpdateLaborTypesAsync(int? createdBy, int? updatedBy, AdminCreateUpdateLaborTypes request)
+        {
+            return await _adminManagementRepository.AdminCreateUpdateLaborTypesAsync(createdBy, updatedBy, request);
 
-        
+        }
 
-        
+
+
+
     }
 }
