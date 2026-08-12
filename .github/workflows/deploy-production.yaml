@@ -8,6 +8,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: deploy-monsterasp-production
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: windows-latest
@@ -21,24 +25,62 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore Labor.API/Labor.API.csproj
+      - name: Restore dependencies (win-x86)
+        run: dotnet restore Labor.API/Labor.API.csproj -r win-x86
 
-      - name: Build project
-        run: dotnet build Labor.API/Labor.API.csproj --configuration Release --no-restore
-
-      - name: Publish application
-        run: dotnet publish Labor.API/Labor.API.csproj --configuration Release --output ./publish --no-build
+      - name: Publish for MonsterASP (win-x86)
+        run: dotnet publish Labor.API/Labor.API.csproj --configuration Release --output ./publish --runtime win-x86 --no-restore
 
       - name: Verify publish output
         run: dir publish
 
-      - name: Deploy to MonsterASP wwwroot
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      # IIS locks DLLs while the site runs. app_offline.htm stops the app before file replace.
+      - name: Stage app_offline.htm
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path ./ftp-app-offline | Out-Null
+          Copy-Item deploy/app_offline.htm ./ftp-app-offline/app_offline.htm
+
+      - name: Stop site (upload app_offline.htm)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./publish/
-          server-dir: /wwwroot/
+          protocol: ftp
+          local-dir: ./ftp-app-offline/
+          server-dir: ${{ secrets.FTP_SERVER_DIR || '/wwwroot/' }}
           dangerous-clean-slate: false
+          log-level: minimal
+          timeout: 120000
+
+      - name: Wait for IIS to release file locks
+        run: powershell -Command "Start-Sleep -Seconds 20"
+
+      - name: Deploy to MonsterASP wwwroot
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          local-dir: ./publish/
+          server-dir: ${{ secrets.FTP_SERVER_DIR || '/wwwroot/' }}
+          dangerous-clean-slate: false
+          log-level: standard
+          timeout: 120000
+          exclude: |
+            **/*.pdb
+            **/.ftp-deploy-sync-state.json
+
+      - name: Start site (remove app_offline.htm)
+        shell: pwsh
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR || '/wwwroot/' }}
+        run: |
+          $dir = $env:FTP_SERVER_DIR.Trim().TrimEnd('/')
+          $remotePath = "$dir/app_offline.htm"
+          & ./deploy/ftp-remove-file.ps1 -Server $env:FTP_SERVER -Username $env:FTP_USERNAME -Password $env:FTP_PASSWORD -RemotePath $remotePath
