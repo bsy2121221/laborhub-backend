@@ -70,6 +70,9 @@ jobs:
           exclude: |
             **/*.pdb
             **/.ftp-deploy-sync-state.json
+            appsettings.json
+            appsettings.Production.json
+            appsettings.Development.json
 
       - name: Start site (remove app_offline.htm)
         shell: pwsh

@@ -24,3 +24,6 @@ logs/
 # Secrets (never commit)
 *.env
 .env.*
+
+# Production config — keep on server only, not in Git
+**/appsettings.Production.json
